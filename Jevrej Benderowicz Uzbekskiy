@@ -1,0 +1,10 @@
+
+import requests
+
+def is404(content):
+    return "404".encode() in content
+
+res = requests.get('https://http.cat')
+content = res.content
+
+print('is 404? ' + str(is404(content)))
